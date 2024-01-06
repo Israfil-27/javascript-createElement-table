@@ -18,11 +18,11 @@ fetch("https://jsonplaceholder.typicode.com/users")
     theadId.textContent="ID"
     theadName.textContent="Name"
     theadUsername.textContent="Username"
-    theadEmail.textContent="Email"
     theadTel.textContent="Phone"
+    theadEmail.textContent="Email"
 
 
-    trHead.append(theadId,theadName,theadUsername,theadEmail,theadTel)
+    trHead.append(theadId,theadName,theadUsername,theadTel,theadEmail)
     users.forEach((users) => {
       
 
