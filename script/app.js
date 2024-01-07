@@ -1,4 +1,4 @@
-let root = document.querySelector("#root");
+let root = document.querySelector("root");
 fetch("https://jsonplaceholder.typicode.com/users")
   .then((res) => res.json())
   .then((users) => {
