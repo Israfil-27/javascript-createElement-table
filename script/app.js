@@ -8,44 +8,33 @@ fetch("https://jsonplaceholder.typicode.com/users")
     const trHead=document.createElement("tr")
     table.append(thead)
     thead.append(trHead)
-
-    const theadId= document.createElement("th")
-    const theadName= document.createElement("th")
-    const theadUsername= document.createElement("th")
-    const theadEmail= document.createElement("th")
-    const theadTel= document.createElement("th")
     const keys = Object.keys(users[0]);
+    console.log(keys.forEach(el=>{
+      const th1= document.createElement("th");
+      th1.textContent=el
+      trHead.append(th1)
+    }));
 
-    theadId.textContent=keys[0]
-    theadName.textContent=keys[1]
-    theadUsername.textContent=keys[2]
-    theadTel.textContent=keys[5]
-    theadEmail.textContent=keys[3]
-
-
-    trHead.append(theadId,theadName,theadUsername,theadTel,theadEmail)
     users.forEach((users) => {
-      
-
-
       const tr = document.createElement("tr");
       const id = document.createElement("td");
       const name = document.createElement("td");
       const username = document.createElement("td");
       const tel = document.createElement("td");
+      const address= document.createElement("td");
       const email = document.createElement("td");
+      const website = document.createElement("td");
+      const company = document.createElement("td");
 
       id.textContent = users.id;
       name.textContent = users.name;
       username.textContent = users.username;
       tel.textContent = users.phone;
+      address.textContent = users.address.city;
       email.textContent = users.email;
-
-      tr.append(id);
-      tr.append(name);
-      tr.append(username);
-      tr.append(tel);
-      tr.append(email);
+      website.textContent = users.website;
+      company.textContent = users.company.name;
+      tr.append(id,name,username,tel,address,email,website,company)
       table.append(tr);
     });
     root.append(table);
