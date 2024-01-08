@@ -1,4 +1,5 @@
-let root = document.querySelector("root");
+const root = document.createElement("root");
+document.body.appendChild(root);
 fetch("https://jsonplaceholder.typicode.com/users")
   .then((res) => res.json())
   .then((users) => {
@@ -13,13 +14,13 @@ fetch("https://jsonplaceholder.typicode.com/users")
     const theadUsername= document.createElement("th")
     const theadEmail= document.createElement("th")
     const theadTel= document.createElement("th")
+    const keys = Object.keys(users[0]);
 
-
-    theadId.textContent="ID"
-    theadName.textContent="Name"
-    theadUsername.textContent="Username"
-    theadTel.textContent="Phone"
-    theadEmail.textContent="Email"
+    theadId.textContent=keys[0]
+    theadName.textContent=keys[1]
+    theadUsername.textContent=keys[2]
+    theadTel.textContent=keys[5]
+    theadEmail.textContent=keys[3]
 
 
     trHead.append(theadId,theadName,theadUsername,theadTel,theadEmail)
@@ -49,3 +50,5 @@ fetch("https://jsonplaceholder.typicode.com/users")
     });
     root.append(table);
   });
+
+
