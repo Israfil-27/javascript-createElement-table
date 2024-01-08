@@ -9,11 +9,11 @@ fetch("https://jsonplaceholder.typicode.com/users")
     table.append(thead)
     thead.append(trHead)
     const keys = Object.keys(users[0]);
-    console.log(keys.forEach(el=>{
+    keys.forEach(el=>{
       const th1= document.createElement("th");
       th1.textContent=el
       trHead.append(th1)
-    }));
+    });
 
     users.forEach((users) => {
       const tr = document.createElement("tr");
